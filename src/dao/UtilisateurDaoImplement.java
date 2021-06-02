@@ -44,7 +44,7 @@ public void setUs(Utilisateur us) {
 		 try {
 			// TODO add your handling code here:
 			            Connexion c = new Connexion();
-			            java.sql.PreparedStatement statement = c.conn.prepareStatement("INSERT INTO `utilisateur`(`id`, `nom`, `prenom`, `login`, `mdp`) VALUES ('" + us.getNom()+ "','" + us.getPrenom() + "','" + us.getLogin() + "','" + us.getMdp() + "')");
+			            java.sql.PreparedStatement statement = c.conn.prepareStatement("INSERT INTO `utilisateur`(`nom`, `prenom`, `login`, `mdp`) VALUES ('" + us.getNom()+ "','" + us.getPrenom() + "','" + us.getLogin() + "','" + us.getMdp() + "')");
 			            statement.executeUpdate();
 			            System.out.println("ajouté avec succés");
 			        } catch (SQLException ex) {
