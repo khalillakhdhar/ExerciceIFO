@@ -41,14 +41,14 @@ public class UserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		UtilisateurDaoImplement udi=new UtilisateurDaoImplement();
-
+String erreur="";
 		String nom=request.getParameter("nom");
 		String prenom=request.getParameter("prenom");
 		String login=request.getParameter("login");
 		String mdp=request.getParameter("mdp");
-		Utilisateur us=new Utilisateur(nom, prenom, login, mdp);
+		Utilisateur u=new Utilisateur(nom, prenom, login, mdp);
 		ValidUser vu=new ValidUser();
-		Utilisateur u=new Utilisateur("teste2","teste2"," admin ","admin");
+		
 		if ((vu.verifUser(u.getNom())) && (vu.verifUser(u.getPrenom())) && ((vu.verifUser(u.getLogin())))
 				&& (vu.verifUser(u.getMdp())))	{
 			udi.adduser(u);
@@ -57,8 +57,12 @@ public class UserServlet extends HttpServlet {
 			
 		}
 		else
+		{
+			erreur ="verifier vos champs";
+			request.setAttribute("erreur", erreur);
+			request.getRequestDispatcher("user.jsp").forward(request, response);
 			System.out.println("incorrecte");
-			
+		}			
 			
 		
 	}

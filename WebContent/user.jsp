@@ -17,19 +17,19 @@
 <form action="UserServlet" method="post">
   <div class="mb-3">
     <label for="exampleInputnom1" class="form-label">nom </label>
-    <input type="text" pattern="[a-z A-Z]{4,30}" required name="nom" class="form-control" id="exampleInputnom1" >
+    <input type="text" required pattern="[a-z A-Z]{4,30}"  name="nom" class="form-control" id="exampleInputnom1" >
   </div>
   <div class="mb-3">
     <label for="prenom" class="form-label">Prenom</label>
-    <input type="text" pattern="[a-z A-Z]{4,30}" required name="prenom" class="form-control" id="pr">
+    <input type="text" pattern="[a-z A-Z]{4,30}"  name="prenom" class="form-control" id="pr">
   </div>
   <div class="mb-3">
     <label for="login" class="form-label">Login</label>
-    <input type="text"  required name="login" class="form-control" id="login">
+    <input type="text"   name="login" class="form-control" id="login">
   </div>
   <div class="mb-3">
     <label for="tel" class="form-label">Mot de passe</label>
-    <input type="text"  required name="mdp" class="form-control" id="mdp">
+    <input type="text"   name="mdp" class="form-control" id="mdp">
   </div>
    
 
